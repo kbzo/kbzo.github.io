@@ -1,12 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mondongo</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapas de Murcia</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    /* center everything vertically and horizontally */
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;       /* vertical center */
+      justify-content: center;   /* horizontal center */
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    /* column to stack maps and text */
+    .content {
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    /* each map stacked vertically with space between */
+    .map {
+      margin: 0 auto 28px;       /* bottom margin creates space between maps */
+      box-shadow: 0 6px 18px rgba(17,17,17,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 640px;          /* keeps iframe width consistent */
+    }
+
+    .map iframe {
+      display: block;
+      width: 100%;
+      height: 480px;
+      border: 0;
+    }
+
+    @media (max-width: 700px) {
+      .map iframe {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Mondongo</h1>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1qpGth9KeiDO75H6YTDu1Zg4sQorPaVg&ehbc=2E312F" width="640" height="480"></iframe>
+  <div class="wrap">
+    <div class="content">
+      <h1>Mapas de Murcia</h1>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1Qe76yPYJiGNUaEGnENruCJxaTE49G8c&ehbc=2E312F&noprof=1"
+                width="640" height="480" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1qpGth9KeiDO75H6YTDu1Zg4sQorPaVg&ehbc=2E312F"
+                width="640" height="480" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
